@@ -33,10 +33,14 @@ export default class Events extends Component {
                 <div
                   className={style.map}
                   ref={ref =>
-                    initializeMap(ref, {
-                      lat: event.venue ? event.venue.lat : event.group.lat,
-                      lng: event.venue ? event.venue.lon : event.group.lon,
-                    })}
+                    initializeMap(
+                      ref,
+                      {
+                        lat: event.venue ? event.venue.lat : event.group.lat,
+                        lng: event.venue ? event.venue.lon : event.group.lon,
+                      },
+                      event.venue ? event.venue.name : event.group.name
+                    )}
                 />
               </div>
             </div>

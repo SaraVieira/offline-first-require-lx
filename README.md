@@ -4,13 +4,25 @@
 
 ## Stack
 
-| CSS                                                       | JavaScript                                 | Tools                                |
-|-----------------------------------------------------------|--------------------------------------------|-------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------------|
-| [PostCSS](http://postcss.org/)                            | [Babel](https://babeljs.io/)               | [Webpack](https://webpack.js.org/)  |
-| [CSSnext](http://cssnext.io/)                             |  [Yarn](https://yarnpkg.com/) |
-| [css-modules](https://github.com/css-modules/css-modules) | [React](https://facebook.github.io/react/) |                                    
-| [stylelint](https://stylelint.io/)                        | [ESlint](http://eslint.org/)                                                    
-|                                                           | [Jest](https://facebook.github.io/jest/)   |                                                      
+### CSS
+
+* [PostCSS](http://postcss.org/)
+* [CSSnext](http://cssnext.io/)
+* [css-modules](https://github.com/css-modules/css-modules)
+
+### JavaScript
+
+* [Preact](https://preactjs.com)
+* [Babel](https://babeljs.io/)
+* [Jest](https://facebook.github.io/jest/)
+* [Chai](http://chaijs.com/)
+
+### Tools
+
+* [Webpack](https://webpack.js.org/)
+* [Yarn](https://yarnpkg.com/)
+* [ESlint](http://eslint.org/)   
+* [stylelint](https://stylelint.io/)                                                  
 
 
 ---

@@ -27,7 +27,10 @@ const formatDate = date => {
 
 export const getDate = date => formatDate(new Date(date));
 
-export const initializeMap = (el, coords) => {
+export const initializeMap = (el, coords, content) => {
+  const infowindow = new google.maps.InfoWindow({
+    content,
+  });
   const map = new google.maps.Map(el, {
     zoom: 16,
     center: coords,
@@ -36,4 +39,5 @@ export const initializeMap = (el, coords) => {
     position: coords,
     map,
   });
+  infowindow.open(map, marker);
 };
