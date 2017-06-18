@@ -3,7 +3,6 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ReplacePlugin from 'replace-bundle-webpack-plugin';
-import WebpackAssetsManifest from 'webpack-assets-manifest';
 import path from 'path';
 
 const ENV = process.env.NODE_ENV || 'development';
@@ -89,18 +88,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new WebpackAssetsManifest({
-      output: 'manifest.json',
-      replacer: null,
-      space: 2,
-      writeToDisk: false,
-      fileExtRegex: /\.\w{2,4}\.(?:map|gz)$|\.\w+$/i,
-      sortManifest: true,
-      merge: false,
-      publicPath: null,
-      customize: null,
-      contextRelativeKeys: false,
-    }),
     new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin({
       filename: 'style.css',

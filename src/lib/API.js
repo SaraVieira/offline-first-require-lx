@@ -1,5 +1,6 @@
+/* global google */
+
 import axios from 'axios';
-import moment from 'moment';
 import { get } from 'lodash';
 
 export const getEvents = () =>
@@ -14,7 +15,25 @@ export const getEvents = () =>
     },
   }).then(get('data'));
 
-export const getDate = date => {
-  const FormattedDate = new Date(date);
-  return moment(FormattedDate).format('DD/MM/YY HH:MM');
+const formatDate = date => {
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+  const year = date.getFullYear();
+  const hour = date.getHours();
+  const min = date.getMinutes();
+
+  return `${day}/${monthIndex}/${year} ${hour}:${min}`;
+};
+
+export const getDate = date => formatDate(new Date(date));
+
+export const initializeMap = (el, coords) => {
+  const map = new google.maps.Map(el, {
+    zoom: 16,
+    center: coords,
+  });
+  const marker = new google.maps.Marker({ // eslint-disable-line
+    position: coords,
+    map,
+  });
 };
