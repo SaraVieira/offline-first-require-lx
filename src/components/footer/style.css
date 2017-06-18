@@ -1,0 +1,14 @@
+.footer {
+	& ul {
+		list-style: none;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: 8px;
+		margin: 0;
+
+		& li:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
+}

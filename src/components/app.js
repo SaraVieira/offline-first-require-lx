@@ -5,9 +5,13 @@ import '../style/index.css';
 
 import Loading from './Loading';
 import Header from './header';
+import Footer from './footer';
 import Home from './home';
 
 export default class App extends Component {
+  getEvents() {
+    return System.import('./events').then(module => module.default);
+  }
   /** Gets fired when the route changes.
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
@@ -15,10 +19,6 @@ export default class App extends Component {
   handleRoute = e => {
     this.currentUrl = e.url;
   };
-
-  getEvents() {
-    return System.import('./events').then(module => module.default);
-  }
 
   render() {
     return (
@@ -37,6 +37,7 @@ export default class App extends Component {
             loading={() => <Loading />}
           />
         </Router>
+        <Footer />
       </div>
     );
   }

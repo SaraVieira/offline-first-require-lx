@@ -122,6 +122,7 @@
     "prettier": "^1.4.4",
     "promise-polyfill": "^6.0.2",
     "proptypes": "^1.0.0",
+    "react-icons": "^2.2.5",
     "regenerator-runtime": "^0.10.3",
     "serve": "^5.1.4",
     "whatwg-fetch": "^2.0.3"
