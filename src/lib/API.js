@@ -28,6 +28,9 @@ const formatDate = date => {
 export const getDate = date => formatDate(new Date(date));
 
 export const initializeMap = (el, coords, content) => {
+  if (!el) {
+    return;
+  }
   const infowindow = new google.maps.InfoWindow({
     content,
   });

@@ -1,10 +1,11 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import AsyncRoute from 'preact-async-route';
 import '../style/index.css';
 
+import Loading from './Loading';
 import Header from './header';
 import Home from './home';
-import Events from './events';
 
 export default class App extends Component {
   /** Gets fired when the route changes.
@@ -14,6 +15,10 @@ export default class App extends Component {
   handleRoute = e => {
     this.currentUrl = e.url;
   };
+
+  getEvents() {
+    return System.import('./events').then(module => module.default);
+  }
 
   render() {
     return (
@@ -26,7 +31,11 @@ export default class App extends Component {
         <Header />
         <Router onChange={this.handleRoute}>
           <Home path="/" />
-          <Events path="/events" />
+          <AsyncRoute
+            path="/events"
+            component={this.getEvents}
+            loading={() => <Loading />}
+          />
         </Router>
       </div>
     );
