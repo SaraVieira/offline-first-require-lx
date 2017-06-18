@@ -9,8 +9,12 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress && babel --no-babelrc src/service-worker.js --out-file build/service-worker.js --presets=es2015",
     "prebuild": "mkdirp build && mkdirp build/assets && ncp src/assets/icons build/assets/icons",
     "test": "npm run -s lint && jest --coverage",
+    "jest": "jest --coverage",
     "test:watch": "npm run -s test -- --watch",
-    "lint": "eslint src test",
+    "eslint": "eslint src test",
+    "lint": "npm run -s eslint stylelint",
+    "stylelint": "stylelint 'src/**/*.css'",
+    "stylelint:fix": "stylefmt -c .stylelintrc src/**/*.css",
     "eslint:fix": "eslint src --fix"
   },
   "keywords": [
@@ -94,6 +98,8 @@
     "source-map-loader": "^0.2.1",
     "static-file-loader": "^0.4.0",
     "style-loader": "^0.18.1",
+    "stylelint": "^7.11.1",
+    "stylelint-config-standard": "^16.0.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
     "webpack-assets-manifest": "^0.7.0",
