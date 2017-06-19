@@ -1,19 +1,11 @@
 /* global google */
+import fetchJsonp from 'fetch-jsonp';
 
-import axios from 'axios';
-import { get } from 'lodash';
+const URL =
+  'https://api.meetup.com/require-lx/events?key=6161504e80005a355e671d2fb5d2e&page=20&sign=true';
 
 export const getEvents = () =>
-  axios({
-    method: 'get',
-    url: 'https://api.meetup.com/require-lx/events',
-    params: {
-      key: '6161504e80005a355e671d2fb5d2e',
-      page: 20,
-      'photo-host': 'public',
-      sign: true,
-    },
-  }).then(get('data'));
+  fetchJsonp(URL).then(resp => resp.json()).then(resp => resp.data);
 
 const formatDate = date => {
   const day = date.getDate();

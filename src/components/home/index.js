@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import style from './style.css';
 import { getEvents, getDate } from '../../lib/API';
+import logo from '../../assets/logo.jpeg';
 
 export default class Home extends Component {
   constructor() {
@@ -11,14 +12,14 @@ export default class Home extends Component {
   }
 
   componentWillMount() {
-    getEvents().then(events => this.setState({ nextEvent: events.data[0] }));
+    getEvents().then(events => this.setState({ nextEvent: events[0] }));
   }
 
   render(props, { nextEvent }) {
     return (
       <div className={style.home}>
         <div className={style.event}>
-          <img src="../../assets/logo.jpeg" alt="logo" className={style.logo} />
+          <img src={logo} alt="logo" className={style.logo} />
           <div className={style.newEvent}>
             <h1> Next Event: </h1>
             <div className={style.details}>

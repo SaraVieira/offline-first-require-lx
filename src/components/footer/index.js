@@ -1,6 +1,8 @@
 import { h } from 'preact';
+import FaTwitter from 'react-icons/lib/fa/twitter';
+import FaGithub from 'react-icons/lib/fa/github';
 import style from './style.css';
-import { FaGithub, FaTwitter } from 'react-icons/lib/fa/';
+
 const footer = () =>
   <footer className={style.footer}>
     <nav>

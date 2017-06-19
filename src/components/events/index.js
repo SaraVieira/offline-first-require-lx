@@ -1,6 +1,5 @@
 import { h, Component } from 'preact';
 import Markup from 'preact-markup';
-import axios from 'axios';
 import style from './style.css';
 import { getEvents, getDate, initializeMap } from '../../lib/API';
 
@@ -14,9 +13,7 @@ export default class Events extends Component {
   }
 
   componentDidMount() {
-    getEvents().then(events =>
-      this.setState({ events: events.data, loading: false })
-    );
+    getEvents().then(events => this.setState({ events, loading: false }));
   }
 
   componentWillUnmount() {}

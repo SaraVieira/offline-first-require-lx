@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ReplacePlugin from 'replace-bundle-webpack-plugin';
 import path from 'path';
+import Visualizer from 'webpack-visualizer-plugin';
 
 const ENV = process.env.NODE_ENV || 'development';
 
@@ -88,6 +89,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new Visualizer(),
     new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin({
       filename: 'style.css',
