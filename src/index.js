@@ -10,7 +10,7 @@ function init() {
 }
 // in development, set up HMR:
 if (module.hot) {
-  require('preact/devtools'); // turn this on if you want to enable React DevTools!
+  require('preact/devtools'); // eslint-disable-line global-require
   module.hot.accept('./components/app', () => requestAnimationFrame(init));
 }
 

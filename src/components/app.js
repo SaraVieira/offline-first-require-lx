@@ -9,7 +9,7 @@ import Footer from './footer';
 import Home from './home';
 
 export default class App extends Component {
-  getEvents() {
+  static getEvents() {
     return System.import('./events').then(module => module.default);
   }
   /** Gets fired when the route changes.
@@ -33,7 +33,7 @@ export default class App extends Component {
           <Home path="/" />
           <AsyncRoute
             path="/events"
-            component={this.getEvents}
+            component={App.getEvents}
             loading={() => <Loading />}
           />
         </Router>

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 // Check for browser support of service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker // eslint-disable-line compat/compat
