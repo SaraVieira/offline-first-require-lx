@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import style from './style.css';
-import { getEvents, getDate } from '../../lib/API';
+import { getEvents, getDate } from '../../lib/utils';
 import logo from '../../assets/logo.jpeg';
 
 export default class Home extends Component {

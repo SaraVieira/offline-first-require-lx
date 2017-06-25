@@ -1,11 +1,11 @@
 /* global google */
 import fetchJsonp from 'fetch-jsonp';
-
-const URL =
-  'https://api.meetup.com/require-lx/events?key=6161504e80005a355e671d2fb5d2e&page=20&sign=true';
+import config from './config';
 
 export const getEvents = () =>
-  fetchJsonp(URL).then(resp => resp.json()).then(resp => resp.data);
+  fetchJsonp(config.meetupApi)
+    .then(resp => resp.json())
+    .then(resp => resp.data);
 
 const formatDate = date => {
   const day = date.getDate();

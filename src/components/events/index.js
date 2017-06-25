@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import Markup from 'preact-markup';
 import style from './style.css';
-import { getEvents, getDate, initializeMap } from '../../lib/API';
+import { getEvents, getDate, initializeMap } from '../../lib/utils';
 
 export default class Events extends Component {
   constructor() {
