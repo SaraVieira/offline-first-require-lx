@@ -1,16 +1,16 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console , compat/compat */
 
 // Check for browser support of service worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker // eslint-disable-line compat/compat
+  navigator.serviceWorker
     .register('service-worker.js')
     .then(registration => {
       console.log(
-        'Hooray. Registration successful, scope is:',
+        'Damn son ! You got a service worker at:',
         registration.scope
       );
     })
     .catch(err => {
-      console.log('Whoops. Service worker registration failed, error:', err);
+      console.log('Sorry man, the registration failed:', err);
     });
 }

@@ -8,7 +8,12 @@ const footer = () =>
       <ul>
         {config.footerLinks.map(link =>
           <li>
-            <a href={link.href} target={link.target} rel={link.rel}>
+            <a
+              href={link.href}
+              target={link.target}
+              rel={link.rel}
+              name={link.name}
+            >
               {link.children}
             </a>
           </li>
