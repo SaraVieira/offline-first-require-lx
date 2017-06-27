@@ -1,6 +1,7 @@
 # Require('lx') website
 
 [Link](https://build-cxrejghmoc.now.sh/)
+[Slides](https://docs.google.com/presentation/d/1vQ9xAijI8NjbQkFESu0LwVYEcpCxqQhcjC7ESzddMTE/edit?usp=sharing)
 
 ## Stack
 
