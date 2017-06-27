@@ -50,12 +50,6 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-      },
-      {
-        // Transform our own .(less|css) files with PostCSS and CSS-modules
         test: /\.(css)$/,
         include: [
           path.resolve(__dirname, 'src/components'),
